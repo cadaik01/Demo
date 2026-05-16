@@ -11,5 +11,5 @@ console.log('read file 2');
 let s2 = fs.readFileSync('data2.txt');
 
 console.log('result 1: ' + s2.toString())//do readFileSync trả về buffer nên phải dùng toString
-
+//Sync: hiện theo trình tự viết
 console.log('End. ')
