@@ -7,6 +7,10 @@ html(lang="en")
     body 
         h4 
             a(href='/products/create') Create New
+        form(action='/products/search')
+            label(for='keyword') Name  
+            input(name='keyword', id='keyword' placeholder='Search by name') 
+            button(type='submit') Search 
         h1 Product List 
         table 
             thead 

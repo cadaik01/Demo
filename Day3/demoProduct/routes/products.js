@@ -40,4 +40,12 @@ router.get('/delete/:id', async (req, res) => {
   return res.redirect('/products')
 })//products này là routes products (link)
 
+//Làm Search - sử dụng dạng query String - chỉ cần có key
+router.get('/search', async (req, res) => {
+  const keyword = req.query.keyword;
+  var products = await ProductModel.find({ 'name': new RegExp(keyword, 'i') });
+  //RegExp= regular expression & i = ignore case
+  return res.render('product/index', { products });
+})
+
 module.exports = router;
