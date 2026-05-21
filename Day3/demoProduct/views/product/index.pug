@@ -1,0 +1,30 @@
+doctype html
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport" content="width=device-width, initial-scale=1.0")
+        title Product List
+    body 
+        h4 
+            a(href='/products/create') Create New
+        h1 Product List 
+        table 
+            thead 
+                tr 
+                    th Name
+                    th Price
+                    th Quantity
+            tbody
+                if products.length > 0 
+                    each item in products
+                        tr 
+                            td= item.name
+                            td= item.price 
+                            td= item.quantity
+                            td
+                                a(href=`/products/update/${item._id}`) Update
+                            td
+                                a(href=`/products/delete/${item._id}`) Delete
+                else 
+                    tr 
+                        td(colspan=3) No products 

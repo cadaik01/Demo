@@ -1,0 +1,20 @@
+doctype html
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport" content="width=device-width, initial-scale=1.0")
+        title Create new Product
+    body 
+        h1 Create new Product 
+        form(action ='/products/create', method = 'post')
+            div 
+                label(for='name') Name 
+                input(name = 'name', id = 'name')
+            div 
+                label(for='price') Price 
+                input(name = 'price', id = 'price')
+            div 
+                label(for='quantity') Quantity 
+                input(name = 'quantity', id = 'quantity')
+            div
+                button(type='submit',value ='Update') Update

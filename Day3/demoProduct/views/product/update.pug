@@ -1,0 +1,20 @@
+doctype html
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport" content="width=device-width, initial-scale=1.0")
+        title Update
+    body 
+        h1 Update  Product 
+        form(action =`/products/update/${prod._id}`, method = 'post')
+            div 
+                label(for='name') Name 
+                input(name = 'name', id = 'name', value=prod.name)
+            div 
+                label(for='price') Price 
+                input(name = 'price', id = 'price', value=prod.price)
+            div 
+                label(for='quantity') Quantity 
+                input(name = 'quantity', id = 'quantity', value=prod.quantity)
+            div
+                button(type='submit', value ='Update') Update
