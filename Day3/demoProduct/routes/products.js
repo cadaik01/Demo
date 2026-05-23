@@ -9,7 +9,7 @@ router.get('/', async (req, res) => {
 });//product trong này là thư mục product
 
 //Làm Create
-router.get('/create', (req, res) => {
+router.get('/create', async(req, res) => {
   return res.render('product/create')
 })
 
