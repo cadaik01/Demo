@@ -1,0 +1,14 @@
+extends ../layout
+
+block content
+    h1 My expenses list
+    a(href='/expenses/new') + Add new
+
+    each expense in expenses
+        div
+            p= expense.title
+            p= expense.amount
+            p= expense.category
+            p= expense.date
+            form(action='/expenses/' + expense._id + '/delete', method='POST')
+                button(type='submit') Delete

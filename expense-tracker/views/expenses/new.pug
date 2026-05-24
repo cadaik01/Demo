@@ -1,0 +1,16 @@
+extend ../layout
+
+block content
+    h1 Add new expense
+    form(action='/expenses', method='POST')
+        input(type='text', name='title', placeholder='Title')
+        input(type='number', name='amount', placeholder='Amount')
+        select(name='category')
+            option(value='food') Food
+            option(value='transport') Transport
+            option(value='shopping') Shopping
+            option(value='health') Health
+            option(value='entertainment') Entertainment
+            option(value='other') Other
+        input(type='date', name='date')
+        button(type='submit') Save
