@@ -1,0 +1,24 @@
+doctype html
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        link(rel='stylesheet', href='/stylesheets/style.css')
+        title Edit Customer
+    body 
+        h1 Edit Customer 
+        form(action=`/customers/edit/${customer._id}`, method="POST", enctype="multipart/form-data")
+            div
+                label(for="email") Email 
+                input(name="email", id="email", value=customer.email)
+            div 
+                label(for="phone") Phone 
+                input(name="phone", id="phone", value=customer.phone)
+            div 
+                label(for="fullName") Full Name 
+                input(name="fullName", id="fullName", value=customer.fullname)
+            div 
+                label(for="image") Image 
+                input(type="file", name="image", id="image")
+            div 
+                button(type="submit") Update 

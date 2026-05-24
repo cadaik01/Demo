@@ -1,0 +1,45 @@
+doctype html
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        link(rel='stylesheet', href='/stylesheets/style.css')
+        title Customer List
+    body 
+        
+        h1 Customer List
+        h4
+            a(href="/customers/create") Create New Customer
+        form(action="/customers/search", method="GET")
+            div.search-bar
+                input(name="keyword", placeholder="Search by name")
+                button(type="submit") Search
+
+        table 
+            thead 
+                tr 
+                    th Email
+                    th Phone
+                    th Full Name
+                    th Image
+                    th Edit
+                    th Delete
+            tbody
+                if customers.length > 0
+                    each item in customers
+                        tr 
+                            td= item.email
+                            td= item.phone
+                            td= item.fullname
+                            td
+                                img(src=`/images/${item.image}`, alt=`${item.fullname}'s image`, style="width: 100px;height: auto;")
+                            td     
+                                a(href=`/customers/edit/${item._id}`) Edit  
+                                //a tag chỉ gửi get
+                            td  
+                                form(action=`/customers/delete/${item._id}`, method="POST")
+                                    button(type="submit") Delete   
+                                //form dùng để gửi Post                         
+                else
+                    tr 
+                        td(colspan="4") No customers found.
