@@ -1,0 +1,17 @@
+doctype html
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        title Login Form
+    body 
+    h1 Login
+    form(action='/account/create' method='post')
+            div 
+                label(for='email') Email
+                input(name = 'email', id = 'email')
+            div 
+                label(for='pwd') Password 
+                input(name = 'pwd', id = 'pwd', type = 'password')
+            div
+                button(type='submit',value ='Login') Login

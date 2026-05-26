@@ -1,0 +1,48 @@
+doctype html
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport" content="width=device-width, initial-scale=1.0")
+        title Create new Account 
+    body 
+        h1 Create new account 
+        form(action='/account/create' method='post')
+            if errors
+                ul
+                    each err in errors
+                        li= err.msg
+            //cách 1 để hiện lỗi
+            div 
+                label(for='email') Email
+                input(name = 'email', id = 'email')
+                //hiện lỗi từng field
+                if errors 
+                    each err in errors
+                        if err.path === 'email'
+                            span(style='color:red')=err.msg 
+            div 
+                label(for='pwd') Password 
+                input(name = 'pwd', id = 'pwd', type = 'password')
+                if errors 
+                    each err in errors
+                        if err.path === 'pwd'
+                            span(style='color:red')=err.msg
+            div 
+                label(for='confirm') Confirm Password 
+                input(name = 'confirm', id = 'confirm', type = 'password')
+            div 
+                label(for='phone') Phone 
+                input(name = 'phone', id = 'phone')
+                if errors 
+                    each err in errors
+                        if err.path === 'phone'
+                            span(style='color:red')=err.msg 
+            div 
+                label(for='fullname') Fullname 
+                input(name = 'fullname', id = 'fullname')
+                if errors 
+                    each err in errors
+                        if err.path === 'fullname'
+                            span(style='color:red')=err.msg 
+            div
+                button(type='submit',value ='Create') Add New Account
