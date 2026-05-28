@@ -14,7 +14,7 @@ const productsRouter = require('./routes/products');
 var app = express();
 
 //khai báo connection
-mongoose.connect('mongodb://localhost:27017/productDB')
+mongoose.connect('mongodb+srv://cadaik01_db_user:BqtMYniY9bpYbRlP@cluster0.jxnvb0f.mongodb.net/?appName=Cluster0')
 .then(()=>console.log('Connect to MongoDB successfully.'))
 .catch((err)=>console.log(`Connect to MongoDB Error: ${err}`));
 
