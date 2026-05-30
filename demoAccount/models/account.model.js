@@ -11,13 +11,12 @@ const AccountSchema = new mongoose.Schema({
     'verify_token': String
 })
 
-AccountSchema.pre('save',async function(next){
+AccountSchema.pre('save',async function(){
     if(!this.isModified('pwd')){
-        return next;
+        return;
     }
     const salt = await bcrypt.genSalt(10);
     this.pwd = await bcrypt.hash(this.pwd, salt);
-    next();
 })
 
 module.exports = mongoose.model('account', AccountSchema);

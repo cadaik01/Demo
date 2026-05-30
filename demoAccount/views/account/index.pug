@@ -21,12 +21,12 @@ html(lang="en")
                             td= item.email
                             td= item.phone
                             td= item.fullname
-                        //-     td
-                        //-         img(src=`/images/${item.image}`, alt=`${item.fullname}`, style='width: 100px; height: auto')
+                            //- td
+                        //-     //-     img(src=`/images/${item.image}`, alt=`${item.fullname}`, style='width: 100px; height: auto')
                         //- td
                         //-     a(href=`/Accounts/edit/${item._id}`) Edit 
-                        //- td
-                        //-     a(href=`/Account/delete/${item._id}`) Delete
+                        td
+                            a(href=`/account/delete/${item._id}`) Delete
                 else 
                     tr 
                         td(colspan=3) No Accounts 

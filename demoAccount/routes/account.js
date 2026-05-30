@@ -43,10 +43,11 @@ router.post('/create',
         return res.redirect('/account');
     })
 
-//     //Delete
-// router.get('/delete/:id', async (req, res) => {
-//     const cid = req.params.id;
-//     const accounts = req.body;
-//     return res.render(`account/delete/{cid}`);
-// })
+    //Delete
+router.get('/delete/:id', async (req, res) => {
+    const cid = req.params.id;
+    await AccountSchema.findByIdAndDelete(cid);
+    return res.redirect('/account');
+})
+
 module.exports = router;

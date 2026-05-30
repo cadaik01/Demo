@@ -4,7 +4,7 @@ const AccountSchema = require("../models/account.model")
 
 /* GET home page. */
 router.get('/', async (req, res,) => {
-  res.render('/auth/login');
+  res.render('auth/login');
 });
 
 router.post('/login', async (req, res,) => {
@@ -15,7 +15,7 @@ router.post('/login', async (req, res,) => {
       return res.redirect('/account'); //nếu đúng chuyển về trang account
     }
   }
-  return res.render('/auth/login', { msg: 'Invalid email or password' }); //néu sai thông báo lỗi
+  return res.render('auth/login', { msg: 'Invalid email or password' }); //néu sai thông báo lỗi
 });
 
 module.exports = router;
