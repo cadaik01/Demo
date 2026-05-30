@@ -15,6 +15,7 @@ var accountRouter = require('./routes/account');
 var authRouter = require('./routes/auth');
 
 var apiAuthRouter = require('./routes/api.auth');
+var apiAccountsRouter = require('./routes/api.accounts');
 
 var app = express();
 
@@ -38,6 +39,7 @@ app.use('/account', accountRouter);
 app.use('/auth', authRouter);
 
 app.use('/api/auth',apiAuthRouter);
+app.use('/api/accounts',apiAccountsRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
